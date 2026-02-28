@@ -68,7 +68,7 @@ const Hero = () => {
               >
                 <Linkedin size={20} />
               </a>
-              <a href={`mailto:${personalInfo.email}`} className="social-link">
+              <a href={`mailto:siva17032003@gmail.com`} className="social-link">
                 <Mail size={20} />
               </a>
               

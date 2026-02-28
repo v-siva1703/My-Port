@@ -46,6 +46,8 @@ const Projects = () => {
                   <span key={idx} className="tag">{tech}</span>
                 ))}
               </div>
+
+              
               
               {/* <div className="project-links">
                 <a href="#" className="project-link">
