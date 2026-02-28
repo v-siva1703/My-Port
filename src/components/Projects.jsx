@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { projects } from '../data';
-import { Code, Calendar, Award, ExternalLink } from 'lucide-react';
+import { Code, Calendar, Award } from 'lucide-react'; // Removed ExternalLink
 
 const Projects = () => {
   return (
@@ -47,9 +47,8 @@ const Projects = () => {
                 ))}
               </div>
 
-              
-              
-              {/* <div className="project-links">
+              {/* Project links are commented out until ready to use
+              <div className="project-links">
                 <a href="#" className="project-link">
                   <Code size={16} />
                   <span>View Code</span>
@@ -58,7 +57,8 @@ const Projects = () => {
                   <ExternalLink size={16} />
                   <span>Live Demo</span>
                 </a>
-              </div> */}
+              </div>
+              */}
             </motion.div>
           ))}
         </div>

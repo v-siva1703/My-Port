@@ -18,7 +18,6 @@ const Footer = () => {
           >
             <h3 className="footer-logo">Siva</h3>
             <p>Full Stack Developer & AI/ML Enthusiast</p>
-            {/* <p>Building innovative solutions with cutting-edge technologies</p> */}
           </motion.div>
 
           <motion.div
@@ -30,18 +29,18 @@ const Footer = () => {
           >
             <div className="link-group">
               <h4>Quick Links</h4>
-              <a href="#home">Home</a>
-              <a href="#about">About</a>
-              <a href="#projects">Projects</a>
-              <a href="#contact">Contact</a>
+              <a href="/#home">Home</a>
+              <a href="/#about">About</a>
+              <a href="/#projects">Projects</a>
+              <a href="/#contact">Contact</a>
             </div>
             
             <div className="link-group">
               <h4>Services</h4>
-              <a href="#">Web Development</a>
-              <a href="#">AI/ML Solutions</a>
-              <a href="#">Data Visualization</a>
-              <a href="#">UI/UX Design</a>
+              <button className="footer-link-button" onClick={() => console.log('Web Development')}>Web Development</button>
+              <button className="footer-link-button" onClick={() => console.log('AI/ML Solutions')}>AI/ML Solutions</button>
+              <button className="footer-link-button" onClick={() => console.log('Data Visualization')}>Data Visualization</button>
+              <button className="footer-link-button" onClick={() => console.log('UI/UX Design')}>UI/UX Design</button>
             </div>
           </motion.div>
         </div>
@@ -57,8 +56,8 @@ const Footer = () => {
             © {currentYear} Siva. All rights reserved. | Made with <Heart size={16} /> using React
           </p>
           <div className="footer-legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms-of-service">Terms of Service</a>
           </div>
         </motion.div>
       </div>

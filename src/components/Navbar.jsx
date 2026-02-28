@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+// Removed unused Menu and X imports
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,14 +18,13 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
           >
             <span className="logo-text">Siva</span>
-            
           </motion.div>
 
           <div className="nav-desktop">
             {navItems.map((item, index) => (
               <motion.a
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={`/#${item.toLowerCase()}`}
                 className="nav-link"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -36,9 +35,10 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* <button className="nav-toggle" onClick={() => setIsOpen(!isOpen)}>
+          {/* Mobile menu toggle - commented out until needed
+          <button className="nav-toggle" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button> */}
+          </button>
 
           {isOpen && (
             <motion.div 
@@ -50,7 +50,7 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <a
                   key={item}
-                  href={`#${item.toLowerCase()}`}
+                  href={`/#${item.toLowerCase()}`}
                   className="nav-link"
                   onClick={() => setIsOpen(false)}
                 >
@@ -59,6 +59,7 @@ const Navbar = () => {
               ))}
             </motion.div>
           )}
+          */}
         </div>
       </div>
     </nav>
