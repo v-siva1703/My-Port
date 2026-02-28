@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-// Removed unused Menu and X imports
+import { Menu, X } from 'lucide-react'; // Add these back
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +35,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Mobile menu toggle - commented out until needed
+          {/* Mobile menu toggle - NOW UNCOMMENTED */}
           <button className="nav-toggle" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -59,7 +59,6 @@ const Navbar = () => {
               ))}
             </motion.div>
           )}
-          */}
         </div>
       </div>
     </nav>
