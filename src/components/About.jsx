@@ -55,9 +55,9 @@ const About = () => {
             <p>{personalInfo.summary}</p>
             
             <div className="about-highlights">
-              <div className="highlight">
+              {/* <div className="highlight">
                 <span className="highlight-number">Freshers</span>
-              </div>
+              </div> */}
               <div className="highlight">
                 <span className="highlight-number">5+</span>
                 <span className="highlight-text">Projects Completed</span>
