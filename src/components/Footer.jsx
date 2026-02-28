@@ -18,7 +18,7 @@ const Footer = () => {
           >
             <h3 className="footer-logo">Siva</h3>
             <p>Full Stack Developer & AI/ML Enthusiast</p>
-            <p>Building innovative solutions with cutting-edge technologies</p>
+            {/* <p>Building innovative solutions with cutting-edge technologies</p> */}
           </motion.div>
 
           <motion.div

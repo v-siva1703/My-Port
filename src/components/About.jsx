@@ -57,16 +57,11 @@ const About = () => {
             <div className="about-highlights">
               <div className="highlight">
                 <span className="highlight-number">Freshers</span>
-                {/* <span className="highlight-text">Years of Experience</span> */}
               </div>
               <div className="highlight">
                 <span className="highlight-number">5+</span>
                 <span className="highlight-text">Projects Completed</span>
               </div>
-              {/* <div className="highlight">
-                <span className="highlight-number">92%</span>
-                <span className="highlight-text">Model Accuracy</span>
-              </div> */}
             </div>
           </motion.div>
         </div>

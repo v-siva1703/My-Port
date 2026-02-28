@@ -3,7 +3,7 @@ export const personalInfo = {
   title: "Full Stack Developer",
   email: "siva17032003@gmail.com",
   location: "Sriviliputtur,India",
-  summary: "Master of Computer Application graduate with expertise in web development, machine learning, and data visualization. Passionate about creating innovative solutions using cutting-edge technologies."
+  summary: "MCA Graduate (2023–2025) and Full Stack Developer skilled in HTML, CSS, JavaScript, React.js, Node.js, and SQL. Built projects including a Machine Learning-based Skin Diagnosis System, WhatsApp UI clone, and COVID-19 Data Analysis dashboard. Completed a 30-Day Full Stack Master Class at Novi Tech R&D Pvt. Ltd."
 };
 
 export const education = [

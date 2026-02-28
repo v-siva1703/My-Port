@@ -4,9 +4,25 @@ import { personalInfo } from '../data';
 import { Github, Linkedin, Mail, Download } from 'lucide-react';
 
 const Hero = () => {
-  // Function to handle resume download (keep your existing download function)
+
   const downloadResume = async () => {
-    // ... keep your existing download function code ...
+    try {
+      const response = await fetch('/Resume.pdf'); // Update this path to your actual resume file
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Resume.pdf';
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Error downloading resume:', error);
+    }
+
   };
 
   return (
@@ -70,7 +86,7 @@ const Hero = () => {
                   font: 'inherit',
                   color: 'inherit'
                 }}
-              >
+                >
                 <Download size={20} />
                 <span>Resume</span>
               </button>
@@ -83,12 +99,12 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="hero-image"
           >
-            <div className="image-placeholder">
+            <div className="image-placeholder style={{ paddingLeft: '60px' }}">
               <div className="image-frame">
-                <div className="image-content">
+                <div className="image-content" >
                   {/* REPLACE THE TECH TAGS WITH YOUR PHOTO */}
                   <img 
-                   src="/images/siva.jpg" // Update this path to your actual photo
+                   src="/images/pic.jpg" // Update this path to your actual photo
                     alt={personalInfo.name}
                     style={{
                       width: '100%',
