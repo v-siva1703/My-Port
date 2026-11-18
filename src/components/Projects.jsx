@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { projects } from '../data';
-import { Code, Calendar, Award } from 'lucide-react'; // Removed ExternalLink
+import { Code, Calendar, Award } from 'lucide-react';
 
 const Projects = () => {
   return (
@@ -15,7 +15,7 @@ const Projects = () => {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               className="project-card"
             >
@@ -25,10 +25,12 @@ const Projects = () => {
                 </div>
                 <div>
                   <h3>{project.title}</h3>
-                  <div className="project-period">
-                    <Calendar size={14} />
-                    <span>{project.period}</span>
-                  </div>
+                  {project.period && (
+                    <div className="project-period">
+                      <Calendar size={14} />
+                      <span>{project.period}</span>
+                    </div>
+                  )}
                 </div>
               </div>
               
@@ -46,19 +48,6 @@ const Projects = () => {
                   <span key={idx} className="tag">{tech}</span>
                 ))}
               </div>
-
-              {/* Project links are commented out until ready to use
-              <div className="project-links">
-                <a href="#" className="project-link">
-                  <Code size={16} />
-                  <span>View Code</span>
-                </a>
-                <a href="#" className="project-link">
-                  <ExternalLink size={16} />
-                  <span>Live Demo</span>
-                </a>
-              </div>
-              */}
             </motion.div>
           ))}
         </div>

@@ -43,7 +43,7 @@ const Experience = () => {
               <p className="experience-description">{exp.description}</p>
               
               <div className="experience-achievements">
-                <h4>Key Achievements:</h4>
+                <h4>Key Responsibilities & Achievements:</h4>
                 <ul>
                   {exp.achievements.map((achievement, idx) => (
                     <li key={idx}>
@@ -54,11 +54,13 @@ const Experience = () => {
                 </ul>
               </div>
               
-              <div className="experience-tags">
-                <span className="tag">Machine Learning</span>
-                <span className="tag">Deep Learning</span>
-                
-              </div>
+              {exp.tags && exp.tags.length > 0 && (
+                <div className="experience-tags">
+                  {exp.tags.map((tag, tIdx) => (
+                    <span key={tIdx} className="tag">{tag}</span>
+                  ))}
+                </div>
+              )}
             </motion.div>
           ))}
         </div>

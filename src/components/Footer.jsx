@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart } from 'lucide-react';
+import { personalInfo } from '../data';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -16,8 +17,8 @@ const Footer = () => {
             viewport={{ once: true }}
             className="footer-text"
           >
-            <h3 className="footer-logo">Siva</h3>
-            <p>Full Stack Developer & AI/ML Enthusiast</p>
+            <h3 className="footer-logo">{personalInfo.name}</h3>
+            <p>{personalInfo.title}</p>
           </motion.div>
 
           <motion.div
@@ -31,16 +32,10 @@ const Footer = () => {
               <h4>Quick Links</h4>
               <a href="/#home">Home</a>
               <a href="/#about">About</a>
+              <a href="/#experience">Experience</a>
               <a href="/#projects">Projects</a>
+              <a href="/#skills">Skills</a>
               <a href="/#contact">Contact</a>
-            </div>
-            
-            <div className="link-group">
-              <h4>Services</h4>
-              <button className="footer-link-button" onClick={() => console.log('Web Development')}>Web Development</button>
-              <button className="footer-link-button" onClick={() => console.log('AI/ML Solutions')}>AI/ML Solutions</button>
-              <button className="footer-link-button" onClick={() => console.log('Data Visualization')}>Data Visualization</button>
-              <button className="footer-link-button" onClick={() => console.log('UI/UX Design')}>UI/UX Design</button>
             </div>
           </motion.div>
         </div>
@@ -53,7 +48,7 @@ const Footer = () => {
           className="footer-bottom"
         >
           <p>
-            © {currentYear} Siva. All rights reserved. | Made with <Heart size={16} /> using React
+            © {currentYear} {personalInfo.name}. All rights reserved. | Built with <Heart size={16} /> using React
           </p>
           <div className="footer-legal">
             <a href="/privacy-policy">Privacy Policy</a>

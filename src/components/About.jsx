@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { personalInfo } from '../data';
-import { User, MapPin, Mail } from 'lucide-react';
+import { personalInfo, projects } from '../data';
+import { User, MapPin, Mail, Phone, Award } from 'lucide-react';
 
 const About = () => {
   return (
@@ -41,6 +41,14 @@ const About = () => {
                   <p>{personalInfo.email}</p>
                 </div>
               </div>
+
+              <div className="info-item">
+                <Phone size={20} />
+                <div>
+                  <h4>Mobile</h4>
+                  <p>{personalInfo.phone}</p>
+                </div>
+              </div>
             </div>
           </motion.div>
 
@@ -55,12 +63,17 @@ const About = () => {
             <p>{personalInfo.summary}</p>
             
             <div className="about-highlights">
-              {/* <div className="highlight">
-                <span className="highlight-number">Freshers</span>
-              </div> */}
               <div className="highlight">
-                <span className="highlight-number">5+</span>
-                <span className="highlight-text">Projects Completed</span>
+                <span className="highlight-number">{projects.length}+</span>
+                <span className="highlight-text">Projects Built</span>
+              </div>
+              <div className="highlight">
+                <span className="highlight-number">8.83</span>
+                <span className="highlight-text">Engineering CGPA</span>
+              </div>
+              <div className="highlight">
+                <span className="highlight-number">100%</span>
+                <span className="highlight-text">Techno-Functional Delivery</span>
               </div>
             </div>
           </motion.div>

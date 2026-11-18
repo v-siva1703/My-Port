@@ -4,10 +4,9 @@ import { personalInfo } from '../data';
 import { Github, Linkedin, Mail, Download } from 'lucide-react';
 
 const Hero = () => {
-
   const downloadResume = async () => {
     try {
-      const response = await fetch('/Resume.pdf'); // Update this path to your actual resume file
+      const response = await fetch('/Resume.pdf');
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -15,14 +14,13 @@ const Hero = () => {
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = 'Resume.pdf';
+      a.download = 'Yogasunder_S_Resume.pdf';
       document.body.appendChild(a);
       a.click();
       window.URL.revokeObjectURL(url);
     } catch (error) {
       console.error('Error downloading resume:', error);
     }
-
   };
 
   return (
@@ -35,7 +33,6 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="hero-text"
           >
-            {/* Keep all your existing hero text content */}
             <span className="hero-greeting">Hello, I'm</span>
             <h1 className="hero-name">{personalInfo.name}</h1>
             <h2 className="hero-title">{personalInfo.title}</h2>
@@ -48,33 +45,47 @@ const Hero = () => {
               <a href="#projects" className="btn btn-outline">
                 View Projects
               </a>
+              <button 
+                onClick={downloadResume} 
+                className="btn btn-outline"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+              >
+                <Download size={18} />
+                <span>Download Resume</span>
+              </button>
             </div>
 
             <div className="hero-social">
-              {/* Keep all your existing social links */}
               <a 
-                href="https://github.com/v-siva1703" 
+                href={personalInfo.github} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="social-link"
+                title="GitHub"
               >
                 <Github size={20} />
               </a>
               <a 
-                href="https://www.linkedin.com/in/siva-v17032003/" 
+                href={personalInfo.linkedin} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="social-link"
+                title="LinkedIn"
               >
                 <Linkedin size={20} />
               </a>
-              <a href={`mailto:siva17032003@gmail.com`} className="social-link">
+              <a 
+                href={`mailto:${personalInfo.email}`} 
+                className="social-link"
+                title="Email"
+              >
                 <Mail size={20} />
               </a>
               
               <button 
                 onClick={downloadResume}
                 className="social-link"
+                title="Download Resume"
                 style={{ 
                   background: 'none', 
                   border: 'none', 
@@ -82,11 +93,11 @@ const Hero = () => {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '5px',
-                  padding: 0,
+                  padding: '0 8px',
                   font: 'inherit',
                   color: 'inherit'
                 }}
-                >
+              >
                 <Download size={20} />
                 <span>Resume</span>
               </button>
@@ -99,18 +110,18 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="hero-image"
           >
-            <div className="image-placeholder style={{ paddingLeft: '60px' }}">
+            <div className="image-placeholder">
               <div className="image-frame">
-                <div className="image-content" >
-                  {/* REPLACE THE TECH TAGS WITH YOUR PHOTO */}
+                <div className="image-content">
                   <img 
-                   src="/images/pic.jpg" // Update this path to your actual photo
+                    src="/images/Yoga.png"
                     alt={personalInfo.name}
                     style={{
                       width: '100%',
                       height: '100%',
                       objectFit: 'cover',
-                      borderRadius: 'inherit', // This will maintain the morphing shape
+                      objectPosition: '80% 10%',
+                      borderRadius: 'inherit',
                     }}
                   />
                 </div>

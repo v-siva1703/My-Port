@@ -1,28 +1,47 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { skills } from '../data';
-import { Code, Palette, Database, LineChart, Cpu } from 'lucide-react';
+import { Code, Layout, Database, Briefcase, Sparkles } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
-    { icon: <Code />, title: "Programming", items: skills.programming },
-    { icon: <Code />, title: "Frontend", items: skills.frontend },
-    { icon: <Database />, title: "Backend", items: skills.backend },
-    { icon: <Palette />, title: "Design", items: skills.design },
-    { icon: <LineChart />, title: "Data Visualization", items: skills.dataViz },
-    { icon: <Cpu />, title: "AI/ML", items: skills.aiMl }
+    { 
+      icon: <Code size={24} />, 
+      title: "Programming Languages", 
+      items: skills.programming 
+    },
+    { 
+      icon: <Layout size={24} />, 
+      title: "Frontend Development", 
+      items: skills.frontend 
+    },
+    { 
+      icon: <Database size={24} />, 
+      title: "Backend Development", 
+      items: skills.backend 
+    },
+    { 
+      icon: <Briefcase size={24} />, 
+      title: "ERP & Functional Consulting", 
+      items: skills.erp 
+    },
+    { 
+      icon: <Sparkles size={24} />, 
+      title: "AI Tools & Automation", 
+      items: skills.ai 
+    }
   ];
 
   return (
     <section id="skills" className="skills">
       <div className="container">
-        <h2 className="section-title">Skills</h2>
+        <h2 className="section-title">Skills & Technologies</h2>
         
         <div className="skills-grid">
           {skillCategories.map((category, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
@@ -43,8 +62,8 @@ const Skills = () => {
                       <motion.div
                         className="skill-level"
                         initial={{ width: 0 }}
-                        whileInView={{ width: `${80 + Math.random() * 15}%` }}
-                        transition={{ duration: 1, delay: 0.2 }}
+                        whileInView={{ width: `${85 + ((idx * 7) % 15)}%` }}
+                        transition={{ duration: 0.8, delay: 0.1 + idx * 0.05 }}
                         viewport={{ once: true }}
                       />
                     </div>

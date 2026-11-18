@@ -235,7 +235,7 @@ section {
 }
 
 .btn:hover {
-  transform: translateY(-3px) scale(1.05);
+  /* transform: translateY(-1px) scale(1); */
   box-shadow: var(--shadow-glow);
 }
 
@@ -599,7 +599,7 @@ section {
 }
 
 .social-link:hover {
-  transform: translateY(-5px) scale(1.1);
+  transform: translateY(-1px) scale(1);
   border-color: transparent;
   box-shadow: var(--shadow-glow-hover);
 }
@@ -611,15 +611,17 @@ section {
 
 /* Hero Image - Animations Removed as Requested */
 .hero-image {
-  margin-top: 70px;
+  margin-top: 0px;
   position: relative;
+  padding-top: 0px;
 }
 
 .image-frame {
   width: min(500px, 90%);
   aspect-ratio: 1/1;
   margin: 0 auto;
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  /* border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; */
+  border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
   background: var(--gradient-primary);
   display: flex;
   align-items: center;
@@ -1528,7 +1530,7 @@ section {
   width: 60px;
 }
 
-.link-group a {
+/* .link-group a {
   display: block;
   color: var(--gray-light);
   text-decoration: none;
@@ -1536,20 +1538,36 @@ section {
   transition: var(--transition-base);
   position: relative;
   padding-left: 0;
+} */
+.link-group a {
+  display: block;
+  color: var(--gray-light);
+  text-decoration: none;
+  margin-bottom: 15px;
+  transition: color 0.3s;
+  position: relative;
+  padding-left: 20px;   /* space for arrow */
+  cursor: pointer;      /* proper link cursor */
 }
-
-.link-group a::before {
+/* .link-group a::before {
   content: '→';
   position: absolute;
   left: -20px;
   opacity: 0;
   transition: var(--transition-base);
   color: var(--primary-light);
+} */
+.link-group a::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transition: var(--transition-base);
+  color: var(--primary-light);
 }
-
 .link-group a:hover {
   color: var(--light);
-  transform: translateX(20px);
+  transform: translateX(8px);
 }
 
 .link-group a:hover::before {
